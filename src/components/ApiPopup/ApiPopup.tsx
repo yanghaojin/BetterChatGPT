@@ -13,7 +13,7 @@ const ApiPopup = () => {
   const firstVisit = useStore((state) => state.firstVisit);
   const setFirstVisit = useStore((state) => state.setFirstVisit);
 
-  const [_apiKey, _setApiKey] = useState<string>(apiKey || '');
+  const [_apiKey, _setApiKey] = useState<string>(apiKey || 'EMPTY');
   const [isModalOpen, setIsModalOpen] = useState<boolean>(
     !apiKey && firstVisit
   );

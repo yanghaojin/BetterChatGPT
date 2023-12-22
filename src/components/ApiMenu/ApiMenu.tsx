@@ -22,7 +22,7 @@ const ApiMenu = ({
   const apiEndpoint = useStore((state) => state.apiEndpoint);
   const setApiEndpoint = useStore((state) => state.setApiEndpoint);
 
-  const [_apiKey, _setApiKey] = useState<string>(apiKey || '');
+  const [_apiKey, _setApiKey] = useState<string>(apiKey || 'EMPTY');
   const [_apiEndpoint, _setApiEndpoint] = useState<string>(apiEndpoint);
   const [_customEndpoint, _setCustomEndpoint] = useState<boolean>(
     !availableEndpoints.includes(apiEndpoint)

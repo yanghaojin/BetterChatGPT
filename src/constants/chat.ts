@@ -13,23 +13,23 @@ const dateString =
 // default system message obtained using the following method: https://twitter.com/DeminDimin/status/1619935545144279040
 export const _defaultSystemMessage =
   import.meta.env.VITE_DEFAULT_SYSTEM_MESSAGE ??
-  `You are ChatGPT, a large language model trained by OpenAI.
-Carefully heed the user's instructions. 
-Respond using Markdown.`;
+    `Hi, I'm an AI assistant. What can I help you?`;
+//   `You are AI assistant and actually a large language model.
+// Carefully heed the user's instructions.
+// Respond using Markdown.`;
 
 export const modelOptions: ModelOptions[] = [
-  'gpt-3.5-turbo',
-  'gpt-3.5-turbo-16k',
-  'gpt-4',
-  'gpt-4-32k',
-  // 'gpt-3.5-turbo-0301',
-  // 'gpt-4-0314',
-  // 'gpt-4-32k-0314',
+	'Yi-6B-Chat'
+//   'gpt-3.5-turbo',
+//   'gpt-3.5-turbo-16k',
+//   'gpt-4',
+//   'gpt-4-32k',
 ];
 
-export const defaultModel = 'gpt-3.5-turbo';
+export const defaultModel = 'Yi-6B-Chat';
 
 export const modelMaxToken: ModelMaxToken = {
+  'Yi-6B-Chat': 32768,
   'gpt-3.5-turbo': 4096,
   'gpt-3.5-turbo-0301': 4096,
   'gpt-3.5-turbo-0613': 4096,
@@ -44,6 +44,10 @@ export const modelMaxToken: ModelMaxToken = {
 };
 
 export const modelCost = {
+  'Yi-6B-Chat': {
+    prompt: { price: 0, unit: 1000 },
+    completion: { price: 0, unit: 1000 },
+  },
   'gpt-3.5-turbo': {
     prompt: { price: 0.0015, unit: 1000 },
     completion: { price: 0.002, unit: 1000 },
@@ -90,7 +94,7 @@ export const modelCost = {
   },
 };
 
-export const defaultUserMaxToken = 4000;
+export const defaultUserMaxToken = 32768;
 
 export const _defaultChatConfig: ConfigInterface = {
   model: defaultModel,
@@ -109,7 +113,7 @@ export const generateDefaultChat = (
   title: title ? title : 'New Chat',
   messages:
     useStore.getState().defaultSystemMessage.length > 0
-      ? [{ role: 'system', content: useStore.getState().defaultSystemMessage }]
+      ? [{ role: 'assistant', content: useStore.getState().defaultSystemMessage }]
       : [],
   config: { ...useStore.getState().defaultChatConfig },
   titleSet: false,

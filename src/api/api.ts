@@ -13,6 +13,9 @@ export const getChatCompletion = async (
     'Content-Type': 'application/json',
     ...customHeaders,
   };
+  if (!apiKey) {
+    apiKey = "EMPTY";
+  }
   if (apiKey) headers.Authorization = `Bearer ${apiKey}`;
 
   if (isAzureEndpoint(endpoint) && apiKey) {
@@ -58,6 +61,9 @@ export const getChatCompletionStream = async (
     'Content-Type': 'application/json',
     ...customHeaders,
   };
+  if (!apiKey) {
+    apiKey = "EMPTY";
+  }
   if (apiKey) headers.Authorization = `Bearer ${apiKey}`;
 
   if (isAzureEndpoint(endpoint) && apiKey) {
