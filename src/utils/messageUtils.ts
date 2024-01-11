@@ -21,7 +21,7 @@ export const getChatGPTEncoding = (
   messages: MessageInterface[],
   model: ModelOptions
 ) => {
-  const isGpt3 = model === 'Yi-6B-Chat';
+  const isGpt3 = model === 'yi-6b-chat-w4a16g32';
 
   const msgSep = isGpt3 ? '\n' : '';
   const roleSep = isGpt3 ? '\n' : '<|im_sep|>';
