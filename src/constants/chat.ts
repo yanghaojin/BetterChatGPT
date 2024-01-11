@@ -19,6 +19,7 @@ export const _defaultSystemMessage =
 // Respond using Markdown.`;
 
 export const modelOptions: ModelOptions[] = [
+	'yi-6b-chat-w4a16g32',
 	'Yi-6B-Chat'
 //   'gpt-3.5-turbo',
 //   'gpt-3.5-turbo-16k',
@@ -26,9 +27,10 @@ export const modelOptions: ModelOptions[] = [
 //   'gpt-4-32k',
 ];
 
-export const defaultModel = 'Yi-6B-Chat';
+export const defaultModel = 'yi-6b-chat-w4a16g32';
 
 export const modelMaxToken: ModelMaxToken = {
+  'yi-6b-chat-w4a16g32': 32768,
   'Yi-6B-Chat': 32768,
   'gpt-3.5-turbo': 4096,
   'gpt-3.5-turbo-0301': 4096,
@@ -44,6 +46,10 @@ export const modelMaxToken: ModelMaxToken = {
 };
 
 export const modelCost = {
+  'yi-6b-chat-w4a16g32': {
+    prompt: { price: 0, unit: 1000 },
+    completion: { price: 0, unit: 1000 },
+  },
   'Yi-6B-Chat': {
     prompt: { price: 0, unit: 1000 },
     completion: { price: 0, unit: 1000 },

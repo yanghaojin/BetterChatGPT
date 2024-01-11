@@ -17,7 +17,7 @@ const TokenCount = React.memo(() => {
   const model = useStore((state) =>
     state.chats
       ? state.chats[state.currentChatIndex].config.model
-      : 'Yi-6B-Chat'
+      : 'yi-6b-chat-w4a16g32'
   );
 
   const cost = useMemo(() => {
