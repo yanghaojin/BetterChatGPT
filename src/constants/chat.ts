@@ -20,20 +20,24 @@ export const _defaultSystemMessage =
 
 export const modelOptions: ModelOptions[] = [
 	'yi-6b-chat-w4a16g32',
+	'yi-6b-chat-w4a16g32-mlx',
 	'yi-6b-chat-w4a16g128',
+	'yi-6b-chat-w4a16g128-mlx',
 	'yi-6b-chat-w4a16g256',
 	'Yi-6B-Chat'
-//   'gpt-3.5-turbo',
-//   'gpt-3.5-turbo-16k',
-//   'gpt-4',
-//   'gpt-4-32k',
+// 	'gpt-3.5-turbo',
+// 	'gpt-3.5-turbo-16k',
+// 	'gpt-4',
+// 	'gpt-4-32k',
 ];
 
 export const defaultModel = 'yi-6b-chat-w4a16g32';
 
 export const modelMaxToken: ModelMaxToken = {
   'yi-6b-chat-w4a16g32': 32768,
+  'yi-6b-chat-w4a16g32-mlx': 32768,
   'yi-6b-chat-w4a16g128': 32768,
+  'yi-6b-chat-w4a16g128-mlx': 32768,
   'yi-6b-chat-w4a16g256': 32768,
   'Yi-6B-Chat': 32768,
   'gpt-3.5-turbo': 4096,
@@ -54,7 +58,15 @@ export const modelCost = {
     prompt: { price: 0, unit: 1000 },
     completion: { price: 0, unit: 1000 },
   },
+  'yi-6b-chat-w4a16g32-mlx': {
+    prompt: { price: 0, unit: 1000 },
+    completion: { price: 0, unit: 1000 },
+  },
   'yi-6b-chat-w4a16g128': {
+    prompt: { price: 0, unit: 1000 },
+    completion: { price: 0, unit: 1000 },
+  },
+  'yi-6b-chat-w4a16g128-mlx': {
     prompt: { price: 0, unit: 1000 },
     completion: { price: 0, unit: 1000 },
   },
